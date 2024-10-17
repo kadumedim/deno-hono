@@ -7,8 +7,8 @@ WORKDIR /app
 # Copy only the deno.json and deno.lock files
 COPY deno.json deno.lock ./
 
-# Pre-fetch dependencies by specifying the entry point (main.ts) and using the lock file
-RUN deno cache --lock deno.lock main.ts
+# Pre-fetch dependencies based on deno.json
+RUN deno cache --lock=deno.lock
 
 # Copy your files to the working directory
 COPY . .
