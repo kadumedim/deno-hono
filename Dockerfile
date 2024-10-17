@@ -4,14 +4,11 @@ FROM denoland/deno:alpine-2.0.0
 # Set the working directory
 WORKDIR /app
 
-# Copy only the deno.json and deno.lock files
-COPY deno.json deno.lock ./
-
-# Pre-fetch dependencies based on deno.json
-RUN deno cache deno.json --lock=deno.lock
-
 # Copy your files to the working directory
 COPY . .
+
+# Pre-fetch dependencies based on the main entrypoint
+RUN deno cache main.ts --lock=deno.lock
 
 # Run the Deno app using permissions to access the environment and network
 CMD ["run", "--allow-net", "--allow-env", "main.ts"]
