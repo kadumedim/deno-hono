@@ -10,6 +10,8 @@ This is a barebones starter template for a Deno 2 project using the [Hono](https
 
 Logging wasn't included since it is [currently marked as UNSTABLE](https://jsr.io/@std/log), add your own or use the one linked at your own risk.
 
+We also utilize a `Dockerfile` as Railway only provides Deno 1 at the moment.
+
 ## Project Structure
 ```plaintext
 .vscode/
