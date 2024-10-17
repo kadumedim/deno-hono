@@ -8,6 +8,8 @@ This is a barebones starter template for a Deno 2 project using the [Hono](https
 - **Route Grouping**: Cleanly organize routes in separate modules.
 - **Health Check**: A simple endpoint to monitor the uptime of the service.
 
+Logging wasn't included sinde it is [currently marked as UNSTABLE](https://jsr.io/@std/log), add your own or use the one linked at your own risk.
+
 ## Project Structure
 ```plaintext
 .vscode/
