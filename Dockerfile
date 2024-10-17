@@ -8,7 +8,7 @@ WORKDIR /app
 COPY deno.json deno.lock ./
 
 # Pre-fetch dependencies based on deno.json
-RUN deno cache --lock=deno.lock
+RUN deno cache --lock deno.lock
 
 # Copy your files to the working directory
 COPY . .
