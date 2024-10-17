@@ -4,11 +4,11 @@ FROM denoland/deno:alpine-2.0.0
 # Set the working directory
 WORKDIR /app
 
-# Copy your project files (including deno.json and deno.lock)
+# Copy your files to the working directory
 COPY . .
 
-# Install the dependencies using `deno install`
-RUN deno install --allow-net --allow-env main.ts
+# Pre-fetch dependencies based on the main entrypoint
+RUN deno install
 
-# Run the installed app (since it’s already installed globally, it should just run)
-CMD ["main"]
+# Run the Deno app using permissions to access the environment and network
+CMD ["run", "--allow-net", "--allow-env", "main.ts"]
