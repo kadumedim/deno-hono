@@ -1,7 +1,11 @@
 import { Hono } from 'hono'
 import userRoutes from './routes/userRoutes.ts'
+import { cors } from 'hono/cors'
+
 const app = new Hono()
 
+// Cors setup
+app.use('*', cors())
 // Your own routes here
 app.route('/users', userRoutes)
 
