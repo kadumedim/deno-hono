@@ -1,5 +1,5 @@
 # Use a base image with Deno installed
-FROM denoland/deno:alpine-2.0.2
+FROM denoland/deno:alpine-2.0.3
 
 # Set the working directory
 WORKDIR /app
